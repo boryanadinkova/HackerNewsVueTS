@@ -25,9 +25,9 @@ import { StoryObject, UserObject } from '../types';
 export default class HelloWorld extends Vue {
   private storiesArr: Array<StoryObject> = [];
   private usersArr: Array<UserObject> = [];
-  async created() {
+  async created(): Promise<void> {
     try {
-      const storyIdArr: Array<any> = [];
+      const storyIdArr: StoryObject['id'][] = [];
 
       const response = await axios.get(
         `https://hacker-news.firebaseio.com/v0/topstories.json`
@@ -38,7 +38,7 @@ export default class HelloWorld extends Vue {
         .map((el) => storyIdArr.push(el));
 
       const storiesArr = await Promise.all(
-        storyIdArr.map(async (el) => await this.getStories(el))
+        storyIdArr.map(async (el: number) => await this.getStories(el))
       );
       storiesArr.sort((a, b) => a.score - b.score);
 
@@ -53,14 +53,14 @@ export default class HelloWorld extends Vue {
     }
   }
 
-  public async getStories(id: number) {
+  public async getStories(id: number): Promise<StoryObject> {
     const response = await axios.get(
       `https://hacker-news.firebaseio.com/v0/item/${id}.json`
     );
     return response.data;
   }
 
-  public async getUsers(author: string) {
+  public async getUsers(author: string): Promise<UserObject> {
     const response = await axios.get(
       `https://hacker-news.firebaseio.com/v0/user/${author}.json`
     );

@@ -25,9 +25,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component';
-import DateComponent from './DateComponent.vue';
-import { StoryObject, UserObject } from '../types';
+import { Vue, Options } from "vue-class-component";
+import DateComponent from "./DateComponent.vue";
+import { StoryObject, UserObject } from "../types";
 
 @Options({
   props: {
@@ -47,8 +47,8 @@ export default class Story extends Vue {
 }
 </script>
 <style lang="scss">
-@import '~/src/assets/_mixins.scss';
-@import '~/src/assets/shared.scss';
+@import "~/src/assets/_mixins.scss";
+@import "~/src/assets/shared.scss";
 
 .card {
   background-repeat: no-repeat;
@@ -125,9 +125,9 @@ export default class Story extends Vue {
   }
 
   .story-score::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background: url('../../src/assets/images/score-icon.svg') no-repeat;
+    background: url("../../src/assets/images/score-icon.svg") no-repeat;
     color: $font-color-black;
     width: 20px;
     height: 20px;
@@ -135,9 +135,9 @@ export default class Story extends Vue {
   }
 
   .story-author-karma::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background: url('../../src/assets/images/reputation-icon.svg') no-repeat;
+    background: url("../../src/assets/images/reputation-icon.svg") no-repeat;
     color: $font-color-black;
     width: 20px;
     height: 20px;

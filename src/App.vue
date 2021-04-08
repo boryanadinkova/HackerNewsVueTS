@@ -4,8 +4,8 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import Stories from './components/Stories.vue';
+import { Options, Vue } from "vue-class-component";
+import Stories from "./components/Stories.vue";
 
 @Options({
   components: {
@@ -16,8 +16,8 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-@import '../src/assets/_mixins.scss';
-@import '../src/assets/shared.scss';
+@import "../src/assets/_mixins.scss";
+@import "../src/assets/shared.scss";
 
 body,
 html {
@@ -27,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  background: url('../src/assets/images/background.png');
+  background: url("../src/assets/images/background.png");
   font-family: $font-body;
   font-size: $font-size;
 }

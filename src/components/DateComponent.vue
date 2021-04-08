@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import { Options, Vue } from "vue-class-component";
 
 @Options({
   props: {
@@ -13,21 +13,21 @@ import { Options, Vue } from 'vue-class-component';
 export default class DateComponent extends Vue {
   timestamp!: number;
 
-  get formatDateCreated() {
+  get formatDateCreated(): string {
     const date = new Date(this.timestamp * 1000);
     const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
     const month = months[date.getMonth()];
     const year = date.getFullYear();
